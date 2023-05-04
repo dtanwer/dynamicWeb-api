@@ -8,6 +8,8 @@ import { contactRouter } from './router/contact.js';
 import { featuresRouter } from './router/features.js';
 import { featuresDataRouter } from './router/featuresData.js';
 import { msgRouter } from './router/contactMsg.js';
+import { adminRouter } from './router/admin.js';
+
 env.config();
 
 
@@ -27,6 +29,7 @@ app.use('/card',cardRouter);
 app.use('/contact',contactRouter);
 app.use('/features',featuresRouter);
 app.use('/featuresdata',featuresDataRouter);
+app.use('/admin',adminRouter);
 
 
 
