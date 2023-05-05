@@ -29,7 +29,7 @@ router.post('/',async (req,res)=>{
 router.put("/", async (req,res)=>{
     
     try {
-        const data= await ContactModel.findByIdAndUpdate("645415e4d05d92a9aa50562a" ,{$set: req.body });
+        const data= await ContactModel.findByIdAndUpdate("645415e4d05d92a9aa50562a" ,{$set: req.body },{ new: true });
         res.json(data); 
     } catch (err) {
         res.json(err);

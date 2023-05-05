@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
 router.put("/:cardId", async (req, res) => {
 
     try {
-        const card = await CardModel.findByIdAndUpdate(req.params.cardId, { $set: req.body });
+        const card = await CardModel.findByIdAndUpdate(req.params.cardId, { $set: req.body },{ new: true });
         res.json(card);
     } catch (err) {
         res.json(err);

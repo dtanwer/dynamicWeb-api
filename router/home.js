@@ -14,6 +14,18 @@ router.get('/',async (req,res)=>{
 })
 
 
+router.put('/', async (req,res)=>{
+    try{
+        const data = await HomeModel.findByIdAndUpdate("64540888d0a8d182ffa30e5a",{$set: req.body }, { new: true });
+        //show the updated data
+        res.json(data);
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+
 
 
 // this api will not use right now!

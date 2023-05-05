@@ -42,7 +42,7 @@ router.post('/',async (req,res)=>{
 router.put("/:Id", async (req,res)=>{
     
     try {
-        const features= await FeaturesDataModel.findByIdAndUpdate(req.params.Id ,{$set: req.body });
+        const features= await FeaturesDataModel.findByIdAndUpdate(req.params.Id ,{$set: req.body },{ new: true });
         res.json(features); 
     } catch (err) {
         res.json(err);
